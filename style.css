@@ -1,0 +1,64 @@
+* {
+    border: 2px solid;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(70, 93, 94);
+}
+
+.container {
+    border: 2px solid;
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    border: 8px solid grey;
+}
+
+.container .lastRow .number {
+    width: 115px;
+}
+
+button {
+    margin: 5px;
+    height: 50px;
+    width: 50px;
+    line-height: 43px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.display {
+    margin: 5px;
+    border: 2px solid black;
+    padding: 10px;
+    height:  18px;
+    text-align: end;
+    color: white;
+    font-weight: 600;
+}
+
+.container .operator {
+    background-color: orange;
+}
+.container .equals {
+    background-color: orange;
+}
+.container .number {
+    background-color: grey;
+}
+.container .decimal {
+    background-color: grey;
+}
+.container .clear {
+    background-color: silver;
+}
+.container .sign {
+    background-color: silver;
+}
+.container .percent {
+    background-color: silver;
+}

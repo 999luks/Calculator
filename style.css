@@ -1,7 +1,3 @@
-* {
-    border: 2px solid;
-}
-
 body {
     display: flex;
     justify-content: center;
@@ -23,6 +19,7 @@ body {
 }
 
 button {
+    border: 2px solid black;
     margin: 5px;
     height: 50px;
     width: 50px;
@@ -32,7 +29,7 @@ button {
 }
 
 .display {
-    margin: 10px;
+    margin: 5px;
     border: 2px solid;
     padding: 10px;
     height:  18px;

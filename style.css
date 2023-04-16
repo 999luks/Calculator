@@ -6,16 +6,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(70, 93, 94);
+    background-color: rgb(41, 41, 41);
 }
 
 .container {
-    border: 2px solid;
     margin: 100px;
     display: flex;
     flex-direction: column;
     background-color: black;
     border: 8px solid grey;
+    flex-shrink: 0;
 }
 
 .container .lastRow .number {
@@ -32,8 +32,8 @@ button {
 }
 
 .display {
-    margin: 5px;
-    border: 2px solid black;
+    margin: 10px;
+    border: 2px solid;
     padding: 10px;
     height:  18px;
     text-align: end;

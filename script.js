@@ -20,16 +20,16 @@ function divide(first, second){
 
 function operate(operator, first, second){
     if(operator=="+"){
-        return add(first, second).toFixed(2);
+        return add(first, second);
     }
     else if(operator=="-"){
-        return subtract(first, second).toFixed(2);
+        return subtract(first, second);
     }
     else if(operator=="*"){
-        return multiply(first, second).toFixed(2);
+        return multiply(first, second);
     }
     else if(operator=="/"){
-        return divide(first, second).toFixed(2);
+        return divide(first, second);
     }
 }
 
@@ -54,6 +54,8 @@ clearButton.addEventListener('click', () => {
     values = [];
 });
 
+hasCalculated = false;
+
 numberButtons.forEach(button => button.addEventListener('click', () => {
     if (    display.textContent === '0'
             || display.textContent === '+' 
@@ -62,16 +64,22 @@ numberButtons.forEach(button => button.addEventListener('click', () => {
             || display.textContent === '/' 
             || display.textContent === 'NaN'){
             display.textContent = button.textContent;
+            hasCalculated = false;
     }
-    else if(   (values[1] === '+'||
+    else if (   (values[1] === '+'||
                 values[1] === '-'||
                 values[1] === '*'||
                 values[1] === '/') && display.textContent === String(values[0])){
             
                 display.textContent = button.textContent;
+                hasCalculated = false;
+    }
+    else if (hasCalculated){
+        display.textContent = button.textContent;
     }
     else {
         display.textContent += button.textContent;
+        hasCalculated = false;
     }
 }));
 
@@ -113,6 +121,7 @@ operatorButtons.forEach(button => button.addEventListener('click', () => {
                 values.shift();
 
                 values.unshift(operate(operator,first,second));
+                hasCalculated = true;
                 display.textContent = String(values[0]);
                 console.log(values)
 
@@ -128,8 +137,11 @@ evaluateButton.addEventListener('click', () => {
         operator = values.pop();
         first = Number(values.pop());
         values.push(operate(operator,first,second));
+        hasCalculated = true;
         display.textContent = values.pop();
+        values.push(display.textContent);
         console.log(values);
+        values.pop();
     }
 }); 
 
